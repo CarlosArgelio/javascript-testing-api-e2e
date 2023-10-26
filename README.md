@@ -32,3 +32,7 @@ psql -h localhost -d my_store -U nico
 SELECT * FROM users;
 DELETE FROM users WHERE id=<id>;
 ```
+
+## autocomplete
+
+npm i @types/jest --save-dev
