@@ -84,7 +84,22 @@ describe('Test for /users path', () => {
       expect(statusCode).toEqual(400);
     });
 
-    // test with statusCode response 200
+    test('should return a new user', async () => {
+      // Arrange
+      const inputData = {
+        email: `carlos02@mail.com`,
+        password: "Carlos123"
+      }
+      // Act
+      const { statusCode, body } = await api.post('/api/v1/users').send(inputData);
+      // Assert
+      expect(statusCode).toEqual(201);
+      // check DB
+      const user = await models.User.findByPk(body.id);
+      expect(user).toBeTruthy();
+      expect(user.role).toBe('admin');
+      expect(user.email).toBe(inputData.email);
+    });
   });
 
   describe('PUT /users', () => {
