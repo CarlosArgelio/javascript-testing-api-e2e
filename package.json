@@ -11,8 +11,8 @@
     "migrations:run": "sequelize-cli db:migrate",
     "migrations:revert": "sequelize-cli db:migrate:undo",
     "migrations:delete": "sequelize-cli db:migrate:undo:all",
-    "test:unit": "jest",
-    "test:unit:coverage": "jest --coverage",
+    "test:unit": "jest --config ./jest-unit.json",
+    "test:unit:coverage": "jest --config ./jest-unit.json --coverage",
     "test:e2e": "jest --config ./jest-e2e.json --verbose --detectOpenHandles --forceExit",
     "test:e2e:coverage": "jest --config ./jest-e2e.json --verbose --detectOpenHandles --forceExit --coverage"
   },

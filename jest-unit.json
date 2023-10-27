@@ -1,0 +1,7 @@
+{
+  "moduleFileExtensions": ["js"],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".test.js$",
+  "coverageDirectory": "coverage_unit"
+}
