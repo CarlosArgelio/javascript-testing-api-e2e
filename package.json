@@ -13,7 +13,7 @@
     "migrations:delete": "sequelize-cli db:migrate:undo:all",
     "test:unit": "jest --config ./jest-unit.json",
     "test:unit:coverage": "jest --config ./jest-unit.json --coverage",
-    "test:e2e": "jest --config ./jest-e2e.json --verbose --detectOpenHandles --forceExit",
+    "test:e2e": "jest --config ./jest-e2e.json --verbose --detectOpenHandles --forceExit --runInBand",
     "test:e2e:coverage": "jest --config ./jest-e2e.json --verbose --detectOpenHandles --forceExit --coverage"
   },
   "keywords": [],
