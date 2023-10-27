@@ -1,6 +1,6 @@
 const request = require('supertest');
-const express = require('express');
 
+const createApp = require('../src/app');
 
 describe('Test for app', () => {
 
@@ -9,12 +9,7 @@ describe('Test for app', () => {
   let api = null;
 
   beforeEach(() => {
-    app = express();
-
-    app.get('/hello', (req, res) => {
-      res.status(200).json({name: 'carlos'});
-    });
-
+    app = createApp();
     server = app.listen(3001);
     api = request(app);
   });
