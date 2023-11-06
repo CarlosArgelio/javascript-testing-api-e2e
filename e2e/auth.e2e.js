@@ -1,6 +1,6 @@
 const request = require('supertest');
 const createApp = require('../src/app');
-const { upSeed, downSeed } = require('./util/seed');
+const { upSeed, downSeed } = require('./util/umzug');
 
 describe('Test for /users path', () => {
 
