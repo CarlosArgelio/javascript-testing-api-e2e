@@ -1,5 +1,6 @@
 const request = require('supertest');
 const createApp = require('../src/app');
+const { upSeed, downSeed } = require('./util/seed');
 
 describe('Test for /users path', () => {
 
@@ -7,10 +8,11 @@ describe('Test for /users path', () => {
   let server = null;
   let api = null;
 
-  beforeAll(() => {
+  beforeAll(async () => {
     app = createApp();
     server = app.listen(3001);
     api = request(app);
+    await upSeed();
   });
 
   describe('POST /login', () => {
@@ -42,7 +44,8 @@ describe('Test for /users path', () => {
     });
   });
 
-  afterAll(() => {
+  afterAll(async () => {
     server.close();
+    await downSeed();
   });
 });
