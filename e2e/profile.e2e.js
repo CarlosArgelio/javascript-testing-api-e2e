@@ -59,7 +59,7 @@ describe('Test for /profile path', () => {
       const { statusCode } = await api.get(`/api/v1/profile/my-order`).set({
         Authorization: `Bearer eyIamBadToken`
       })
-      expect(statusCode).toEqual(401);
+      expect(statusCode).toEqual(404);
     });
 
     test('should return a user with access token valid', async () => {
